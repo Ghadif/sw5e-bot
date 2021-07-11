@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Configuration;
  */
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "discord.bot.message")
-public class MessageProperties {
+@ConfigurationProperties(prefix = "discord.bot.message.matcher")
+public class PatternMatcherSupplier {
 
-    private String prefix;
     private String help;
+    private String roll;
 
 }

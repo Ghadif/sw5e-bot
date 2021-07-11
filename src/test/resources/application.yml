@@ -6,5 +6,6 @@ discord:
   bot:
     token: ${BOT_TOKEN}
     message:
-      prefix: /
-      help: help
+      matcher:
+        help: /help
+        roll: /roll (\d+)?d(\d+)([\+\-]\d+)?

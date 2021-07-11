@@ -1,7 +1,9 @@
 package com.ghadif.listener;
 
-import com.ghadif.parser.CommandParserDecorator;
+import com.ghadif.exception.NotACommandException;
+import com.ghadif.parser.CommandParserFactory;
 import discord4j.core.event.domain.message.MessageCreateEvent;
+import discord4j.core.object.entity.Message;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
@@ -13,7 +15,7 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class MessageCreateListener extends GenericEventListener<MessageCreateEvent> {
 
-    private final CommandParserDecorator commandParserDecorator;
+    private final CommandParserFactory commandParserFactory;
 
     @Override
     public Class<MessageCreateEvent> getEventType() {
@@ -25,12 +27,16 @@ public class MessageCreateListener extends GenericEventListener<MessageCreateEve
         return Mono.just(messageCreateEvent)
                 .map(MessageCreateEvent::getMessage)
                 .filter(message -> message.getAuthor().map(user -> !user.isBot()).orElse(false))
-                .flatMap(message -> {
-                            String parsedCommand = commandParserDecorator.parseCommand(message.getContent());
-                            return message.getChannel()
-                                    .filter(messageChannel -> !parsedCommand.isBlank())
-                                    .flatMap(messageChannel -> messageChannel.createMessage(parsedCommand));
-                        }
-                ).then();
+                .flatMap(this::reactToMessage)
+                .then();
+    }
+
+    private Mono<Message> reactToMessage(Message message) {
+        try {
+            String parsedCommand = commandParserFactory.parseCommand(message.getContent());
+            return message.getChannel().flatMap(messageChannel -> messageChannel.createMessage(parsedCommand));
+        } catch (NotACommandException ex) {
+            return Mono.just(message);
+        }
     }
 }

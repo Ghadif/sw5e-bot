@@ -1,9 +1,16 @@
 package com.ghadif.parser;
 
+import com.ghadif.configuration.PatternMatcherSupplier;
+import lombok.RequiredArgsConstructor;
+
 /**
  * @author Ghadi Freiha, alias Darth Cras
  */
-public interface CommandParser {
+@RequiredArgsConstructor
+public abstract class CommandParser {
 
-    String parseCommand(String command);
+    protected final PatternMatcherSupplier patternMatcherSupplier;
+
+    abstract String getPatternMatcher();
+    abstract String parseCommand(String command);
 }

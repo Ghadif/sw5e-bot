@@ -31,9 +31,10 @@ public class CustomDisplayNameGenerator {
         static String replaceAllCamelCaseAndUnderscores(String testName) {
             return WordUtils
                     .capitalize(testName
-                            .replaceAll("_returns", " ==> returns")
+                            .replaceAll("_returns", " ==> returns ")
                             .replaceAll("_", " - ")
-                            .replaceAll("\\(\\)", ""));
+                            .replace("(", "")
+                            .replace(")", ""));
         }
     }
 }

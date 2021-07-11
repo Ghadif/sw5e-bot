@@ -13,5 +13,4 @@ import org.springframework.context.annotation.Configuration;
 public class DiscordBotProperties {
 
     private String token;
-    private MessageProperties message;
 }

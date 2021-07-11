@@ -17,7 +17,7 @@ public class CustomDisplayNameGeneratorTest {
         String replacedMethodName = CustomDisplayNameGenerator.ReplaceCamelCaseAndUnderscores
                 .replaceAllCamelCaseAndUnderscores(methodName);
 
-        String expectedMethodName = "ReplaceAllUnderscores - CapitalizesWords - ReplacesUnderscores - RemovesParentheses ==> ReturnsString";
+        String expectedMethodName = "ReplaceAllUnderscores - CapitalizesWords - ReplacesUnderscores - RemovesParentheses ==> Returns String";
 
         assertEquals(expectedMethodName, replacedMethodName);
     }

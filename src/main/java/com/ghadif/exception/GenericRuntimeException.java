@@ -1,7 +1,5 @@
 package com.ghadif.exception;
 
-import java.util.Objects;
-
 /**
  * @author Ghadi Freiha, alias Darth Cras
  */
