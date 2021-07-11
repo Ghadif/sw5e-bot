@@ -1,6 +1,6 @@
 package com.ghadif.configuration;
 
-import com.ghadif.listeners.EventListener;
+import com.ghadif.listener.EventListener;
 import discord4j.core.DiscordClientBuilder;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.Event;

@@ -1,6 +1,6 @@
 package com.ghadif.configuration;
 
-import com.ghadif.listeners.EventListener;
+import com.ghadif.listener.EventListener;
 import discord4j.common.util.Snowflake;
 import discord4j.core.GatewayDiscordClient;
 import org.junit.jupiter.api.Test;

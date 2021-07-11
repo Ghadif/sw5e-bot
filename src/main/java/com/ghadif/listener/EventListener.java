@@ -1,6 +1,5 @@
-package com.ghadif.listeners;
+package com.ghadif.listener;
 
-import com.austinv11.servicer.Service;
 import discord4j.core.event.domain.Event;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
