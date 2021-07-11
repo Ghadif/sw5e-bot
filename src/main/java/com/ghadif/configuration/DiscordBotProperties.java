@@ -2,7 +2,6 @@ package com.ghadif.configuration;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.NestedConfigurationProperty;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -15,6 +14,4 @@ public class DiscordBotProperties {
 
     private String token;
     private MessageProperties message;
-
-
 }
