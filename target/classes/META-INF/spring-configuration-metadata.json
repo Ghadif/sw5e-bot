@@ -1,0 +1,37 @@
+{
+  "groups": [
+    {
+      "name": "discord.bot",
+      "type": "com.ghadif.configuration.DiscordBotProperties",
+      "sourceType": "com.ghadif.configuration.DiscordBotProperties"
+    },
+    {
+      "name": "discord.bot.message",
+      "type": "com.ghadif.configuration.MessageProperties",
+      "sourceType": "com.ghadif.configuration.MessageProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "discord.bot.message",
+      "type": "com.ghadif.configuration.MessageProperties",
+      "sourceType": "com.ghadif.configuration.DiscordBotProperties"
+    },
+    {
+      "name": "discord.bot.message.help",
+      "type": "java.lang.String",
+      "sourceType": "com.ghadif.configuration.MessageProperties"
+    },
+    {
+      "name": "discord.bot.message.prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.ghadif.configuration.MessageProperties"
+    },
+    {
+      "name": "discord.bot.token",
+      "type": "java.lang.String",
+      "sourceType": "com.ghadif.configuration.DiscordBotProperties"
+    }
+  ],
+  "hints": []
+}

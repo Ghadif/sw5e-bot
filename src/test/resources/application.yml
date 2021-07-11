@@ -1,0 +1,6 @@
+discord:
+  bot:
+    token: ODYzNTE3Mzk0MzQ5MDY0MjEy.YOoDPg.hUgxB16vK85NBYXmvWWYCJxCI08
+    message:
+      prefix: /
+      help: help
