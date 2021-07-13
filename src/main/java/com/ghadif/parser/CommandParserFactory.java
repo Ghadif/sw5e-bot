@@ -17,8 +17,8 @@ public class CommandParserFactory {
 
     private final List<CommandParser> allCommandParsers;
 
-    public String parseCommand(String messageContent) {
-        return this.determineCommandParser(messageContent).parseCommand(messageContent);
+    public CommandParser getCommandParserForMessage(String messageContent) {
+        return this.determineCommandParser(messageContent);
     }
 
     CommandParser determineCommandParser(String messageContent) {

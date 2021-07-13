@@ -25,7 +25,7 @@ public class DiceRollParser extends CommandParser {
 
         int total = this.calculateDiceRoll(diceCommand);
 
-        return String.format("Result of %s is %d", diceCommand, total);
+        return String.format("%s = %d", diceCommand, total);
     }
 
     int calculateDiceRoll(String diceCommand) {
