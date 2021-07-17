@@ -23,12 +23,12 @@ public class DiceRollParser extends CommandParser {
     public String parseCommand(String command) {
         String diceCommand = command.replace("/roll ", "");
 
-        int total = this.calculateDiceRoll(diceCommand);
+        int total = this.calculateDiceRollFromString(diceCommand);
 
         return String.format("%s = %d", diceCommand, total);
     }
 
-    int calculateDiceRoll(String diceCommand) {
+    int calculateDiceRollFromString(String diceCommand) {
         String[] diceAttributesArray = diceCommand.split("[d+\\-]");
 
         final int numberOfDie = diceAttributesArray[0].isBlank()

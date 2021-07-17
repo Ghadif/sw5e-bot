@@ -12,7 +12,7 @@ public abstract class GenericEventListener<T extends Event> implements EventList
 
     @Override
     public final Mono<Void> handleError(Throwable error) {
-        log.error("Unable to process " + this.getEventType().getSimpleName(), error);
+        log.error("Unable to process ".concat(this.getEventType().getSimpleName()), error);
         return Mono.empty();
     }
 

@@ -22,13 +22,16 @@ public class CommandParserFactory {
     }
 
     CommandParser determineCommandParser(String messageContent) {
-        return allCommandParsers.stream()
+        CommandParser assignedParser = allCommandParsers.stream()
                 .filter(commandParser -> messageContent.matches(commandParser.getPatternMatcher()))
                 .findAny()
                 .orElseThrow(() -> {
                     log.warn("The message passed [{}] is not a recognized command", messageContent);
                     return new NotACommandException("The message passed [%s] is not a recognized command", messageContent);
                 });
+
+        log.info("Determined command parser of type [{}] for command [{}]", assignedParser.getClass(), messageContent);
+        return assignedParser;
 
     }
 }
