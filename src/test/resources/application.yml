@@ -4,7 +4,6 @@ spring:
 
 discord:
   bot:
-    token: ${BOT_TOKEN}
     message:
       matcher:
         help: /help

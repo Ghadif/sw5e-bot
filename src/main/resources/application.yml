@@ -1,10 +1,10 @@
+### Spring configuration
 spring:
   profiles:
     active: personal
 
 discord:
   bot:
-    token: ${BOT_TOKEN}
     message:
       matcher:
         help: /help

@@ -47,9 +47,9 @@ public class DiceRollParserTest {
     @RepeatedTest(100)
     void parseCommand_returnsCorrectOutput() {
         String resultNumber = diceRollParser.parseCommand("/roll 5d20-8");
-        assertTrue(resultNumber.startsWith("Result of 5d20-8 is "));
+        assertTrue(resultNumber.startsWith("5d20-8 = "));
 
-        int result = Integer.parseInt(resultNumber.split(" ")[4]);
+        int result = Integer.parseInt(resultNumber.split(" ")[2]);
         assertTrue(result >= -3 && result <= 92);
     }
 }
