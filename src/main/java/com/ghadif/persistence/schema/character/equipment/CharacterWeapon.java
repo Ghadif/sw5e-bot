@@ -10,9 +10,9 @@ import lombok.ToString;
 @Getter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Weapon extends Equipment {
+public class CharacterWeapon extends Equipment {
 
-    public Weapon(String name, Integer weight) {
+    public CharacterWeapon(String name, Integer weight) {
         super(name, weight);
     }
 }

@@ -20,12 +20,12 @@ public class EquippedGear {
 
     private final Armor armorWorn;
     private final Shield shieldHeld;
-    private final Weapon mainWeapon;
-    private final Weapon secondaryWeapon;
+    private final CharacterWeapon mainWeapon;
+    private final CharacterWeapon secondaryWeapon;
 
     @Builder
     @PersistenceConstructor
-    public EquippedGear(Armor armorWorn, Shield shieldHeld, Weapon mainWeapon, Weapon secondaryWeapon) {
+    public EquippedGear(Armor armorWorn, Shield shieldHeld, CharacterWeapon mainWeapon, CharacterWeapon secondaryWeapon) {
         this.armorWorn = armorWorn;
         this.shieldHeld = shieldHeld;
         this.mainWeapon = mainWeapon;

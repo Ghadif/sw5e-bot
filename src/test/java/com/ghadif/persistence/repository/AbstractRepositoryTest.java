@@ -14,10 +14,13 @@ import org.springframework.context.annotation.Import;
 public class AbstractRepositoryTest {
 
     @Autowired
-    private CharacterRepository characterRepository;
+    protected CharacterRepository characterRepository;
+    @Autowired
+    protected WeaponRepository weaponRepository;
 
     @AfterEach
     void tearDown() {
         characterRepository.deleteAll();
+        weaponRepository.deleteAll();
     }
 }

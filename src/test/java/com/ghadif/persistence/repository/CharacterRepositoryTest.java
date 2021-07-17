@@ -21,18 +21,16 @@ import com.ghadif.persistence.schema.character.enums.ForceAlignment;
 import com.ghadif.persistence.schema.character.enums.MovementType;
 import com.ghadif.persistence.schema.character.enums.VisionType;
 import com.ghadif.persistence.schema.character.equipment.Armor;
+import com.ghadif.persistence.schema.character.equipment.CharacterWeapon;
 import com.ghadif.persistence.schema.character.equipment.Equipment;
 import com.ghadif.persistence.schema.character.equipment.EquippedGear;
 import com.ghadif.persistence.schema.character.equipment.Shield;
-import com.ghadif.persistence.schema.character.equipment.Weapon;
 import com.ghadif.persistence.schema.character.health.DeathSaves;
 import com.ghadif.persistence.schema.character.health.HitDice;
 import com.ghadif.persistence.schema.character.health.HitPoints;
 import com.ghadif.persistence.schema.character.skills.CharacterFeature;
 import com.ghadif.persistence.schema.character.skills.CombatMovement;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 
 import java.util.List;
 import java.util.Set;
@@ -42,15 +40,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * @author Ghadi Freiha, alias Darth Cras
  */
-@DataMongoTest
 public class CharacterRepositoryTest extends AbstractRepositoryTest {
-
-    @Autowired
-    private CharacterRepository characterRepository;
 
     @Test
     void saveCharacter_returnsCharacter() {
-        Weapon blaster = new Weapon("blaster", 5);
+        CharacterWeapon blaster = new CharacterWeapon("blaster", 5);
         Armor lightArmor = new Armor("light", 10);
         Shield energyShield = new Shield("energy", 1);
 
@@ -160,8 +154,6 @@ public class CharacterRepositoryTest extends AbstractRepositoryTest {
                 )))
 
                 .build());
-
-        System.out.println(savedCharacter);
 
         assertEquals(savedCharacter, characterRepository.findAll().get(0));
         assertEquals(1, characterRepository.count());
