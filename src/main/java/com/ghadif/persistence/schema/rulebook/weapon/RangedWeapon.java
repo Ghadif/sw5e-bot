@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.ToString;
 import org.springframework.data.annotation.PersistenceConstructor;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.util.Set;
 
 /**
@@ -18,8 +20,14 @@ import java.util.Set;
 @EqualsAndHashCode(callSuper = true)
 public class RangedWeapon extends Weapon {
 
+    @NotNull
+    @Positive
     private final Integer ammunition;
+    @NotNull
+    @Positive
     private final Integer range;
+    @NotNull
+    @Positive
     private final Integer maxRange;
 
 
